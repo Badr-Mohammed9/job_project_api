@@ -1,0 +1,11 @@
+{
+    "name": "Authuser",
+    "alias": "authuser",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Authuser\\Providers\\AuthuserServiceProvider"
+    ],
+    "files": []
+}
