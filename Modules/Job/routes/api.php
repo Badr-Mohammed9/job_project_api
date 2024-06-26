@@ -25,7 +25,7 @@ Route::post('/job',[JobController::class,'create'])->middleware('auth:sanctum');
 
 Route::post('/job/filter',[JobController::class,'filter'])->middleware('auth:sanctum');
 
-// Route::get('/job/{job}',[JobController::class,'detial'])->middleware('auth:sanctum');
+Route::get('/job/{id}',[JobController::class,'getOffer'])->middleware('auth:sanctum');
 
 Route::post('/job/test',function(){
     return response()->json([

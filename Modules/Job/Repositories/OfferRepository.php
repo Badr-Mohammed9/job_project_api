@@ -35,4 +35,15 @@ class OfferRepository
     {
         return Offer::all();
     }
+
+    public function getOffer($id)
+    {
+        $offer = Offer::find($id);
+
+        if (!$offer) {
+            return response()->json(['message' => 'Offer not found'], 404);
+        }
+
+        return response()->json($offer);
+    }
 }

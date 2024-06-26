@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Modules\Job\Features\FilterOffer;
 use Modules\Job\Features\GetOffers;
+use Modules\Job\Features\getSingleOffer;
 use Modules\Job\Http\Requests\CreateOfferRequest;
 use Modules\Job\Http\Requests\FilterOfferRequest;
 use Modules\Job\Models\Offer;
@@ -44,5 +45,10 @@ class JobController extends Controller
     public function getOffers()
     {
         return (new GetOffers)->handle();
+    }
+
+    public function getOffer($id)
+    {
+        return (new getSingleOffer)->handle($id);
     }
 }
