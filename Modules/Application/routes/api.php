@@ -20,3 +20,5 @@ Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
 });
 
 Route::get('/application',[ApplicationController::class,'getAllApplications'])->middleware('auth:sanctum');
+
+Route::post('/application', [ApplicationController::class, 'createApplication'])->middleware('auth:sanctum');

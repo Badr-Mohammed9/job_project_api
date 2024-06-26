@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Modules\Job\Features\FilterOffer;
+use Modules\Job\Features\GetOffers;
 use Modules\Job\Http\Requests\CreateOfferRequest;
 use Modules\Job\Http\Requests\FilterOfferRequest;
 use Modules\Job\Models\Offer;
@@ -38,5 +39,10 @@ class JobController extends Controller
         $offer = (new CreateOffer())->handle($data);
 
         return response()->json($offer, 201);
+    }
+
+    public function getOffers()
+    {
+        return (new GetOffers)->handle();
     }
 }

@@ -10,5 +10,15 @@ class ApplicationRepositoriy
     {
         return UserApplication::all();
     }
+
+    public function create($user_id,$offer_id)
+    {
+        $application = UserApplication::create([
+            'user_id'=>$user_id,
+            'offer_id'=>$offer_id
+        ]);
+
+        return $application;
+    }
 }
 

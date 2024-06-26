@@ -30,4 +30,9 @@ class OfferRepository
 
         return response()->json($jobs);
     }
+
+    public function all()
+    {
+        return Offer::all();
+    }
 }
